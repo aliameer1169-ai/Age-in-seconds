@@ -18,6 +18,15 @@ if st.button("Calculate Age in Seconds"):
     
     st.success(f"🎉 Your age is approximately **{int(age_seconds):,} seconds**!")
     st.caption(f"That’s roughly {round(age_seconds / (60*60*24*365.25), 2)} years.")
+    # Convert into days, hours, and minutes
+    age_days = age_seconds / (60 * 60 * 24)
+    age_hours = age_seconds / (60 * 60)
+    age_minutes = age_seconds / 60
+
+st.info(f"📅 That's also about **{int(age_days):,} days**!")
+st.info(f"⏰ Or approximately **{int(age_hours):,} hours**!")
+st.info(f"🕒 And around **{int(age_minutes):,} minutes**!")
+
 
 # --- Info Section ---
 with st.expander("ℹ️ How it works"):
@@ -30,4 +39,4 @@ with st.expander("ℹ️ How it works"):
     Uses Python’s built-in `datetime` module for accurate calculations.
     """)
 
-st.caption("Made with ❤️ using Streamlit")
+
